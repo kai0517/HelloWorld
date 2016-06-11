@@ -1,3 +1,7 @@
+// This is my C++ practice program including several C++11 features
+// 2016-05-27 Create Hello program
+// 2016-06-08 Add curly-brace-delimited initializer and usage of 'auto'
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -14,9 +18,9 @@ void TestCurlyBraceDelimitedInitializerAndAuto()
 
 	std::vector< int > v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 	std::cout << "The value of integer vector 'v' is [";
-	for (auto it = v.begin(); it != v.end(); ++it)
+	for ( auto const& x : v )
 	{
-		std::cout << (it == v.begin() ? "" : ",") << *it;
+		std::cout << ( &x == &v[ 0 ] ? "" : ",") << x;
 	}
 	std::cout << "]\n";
 }
